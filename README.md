@@ -9,9 +9,8 @@ This is a function that makes optionals in preconditions a little less painful:
     extension Optional {
     /// Thanks to http://www.russbishop.net/improving-optionals for how to get
     the "Wrapped" type
-        func flatApply(_ f: (Wrapped) -> Bool) -> Bool {
-            if self == nil {return false}
-            return self.flatMap(f)!
+        func flatPred(_ f: (Wrapped) -> Bool) -> Bool {
+          return self.flatMap(f) ?? false
         }
      }
 
@@ -30,7 +29,7 @@ This is a function that makes optionals in preconditions a little less painful:
 
      print("Normal vanilla")
 
-     precondition( str.flatApply{ $0 == "there"}, "It's really not there!")
+     precondition( str.flatPred{ $0 == "there"}, "It's really not there!")
 
      print("naming left to you, I dislike flatApply and flatPred")
 
