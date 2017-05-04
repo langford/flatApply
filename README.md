@@ -1,4 +1,4 @@
-# flatApply
+# flatPred
 
 This is a function that makes optionals in preconditions a little less painful:
 
@@ -15,14 +15,14 @@ This is a function that makes optionals in preconditions a little less painful:
         }
      }
 
-     var dict = ["hello":"there", "you":"people"]
+     var dict = ["hello":"there", "you":"🐨s"]
 
 
      //
      // Use these to verify it's the same as the precondition with flatmap ?? false
      //
 
-     var str:String? = dict["people"] //fails as nil
+     var str:String? = dict["🐨s"] //fails as nil
      //var str:String? = dict["you"]    //fails as non-there
      //var str:String? = dict["hello"]  //succeeds
 
